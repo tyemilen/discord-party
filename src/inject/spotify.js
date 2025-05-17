@@ -75,20 +75,3 @@ window.addEventListener('message', async (event) => {
 
 	if (searchLoaded) searchAndPlay();
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-	const originalTitle = document.title;
-
-	const padding = ' '.repeat(originalTitle.length);
-	const scrollingText = padding + originalTitle + padding;
-
-	let position = scrollingText.length - originalTitle.length;
-
-	function animateTitle() {
-		document.title = scrollingText.substring(position, originalTitle.length);
-
-		position = (position - 1 + scrollingText.length) % scrollingText.length;
-	}
-
-	setInterval(animateTitle, 150);
-});
