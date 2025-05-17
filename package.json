@@ -1,0 +1,21 @@
+{
+  "name": "discord-party",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "watch": "webpack --mode=development --watch --config config/webpack.config.js",
+    "build": "webpack --mode=production --config config/webpack.config.js",
+    "pack": "node pack.js",
+    "repack": "npm run build && npm run pack"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.16",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.11.0",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^4.10.0",
+    "webpack-merge": "^5.10.0"
+  }
+}

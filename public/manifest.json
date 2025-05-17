@@ -1,0 +1,47 @@
+{
+	"manifest_version": 3,
+	"name": "Discord Party",
+	"version": "0.1.0",
+	"description": "",
+	"icons": {
+		"48": "icons/icon_48.png",
+		"128": "icons/icon_128.png"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"action": {
+		"default_title": "Discord Party",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"storage",
+		"identity",
+		"tabs",
+		"scripting"
+	],
+	"host_permissions": [
+		"*://discord.com/*",
+		"*://open.spotify.com/*"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"https://discord.com/*"
+			],
+			"run_at": "document_idle",
+			"js": [
+				"contentScript.discord.js"
+			]
+		},
+		{
+			"matches": [
+				"https://open.spotify.com/*"
+			],
+			"run_at": "document_idle",
+			"js": [
+				"contentScript.spotify.js"
+			]
+		}
+	]
+}
